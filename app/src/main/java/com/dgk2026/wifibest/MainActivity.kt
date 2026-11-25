@@ -66,9 +66,7 @@ class MainActivity : ComponentActivity() {
                             bssid = it.BSSID ?: "—",
                             frequency = it.frequency,
                             rssi = it.level,
-                            signal = WifiManager.calculateSignalLevel(
-                                it.level, 100
-                            )
+                            signal = ((it.level + 100) * 2).coerceIn(0, 100)
                         )
                     }
 
