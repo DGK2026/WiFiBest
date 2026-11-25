@@ -65,7 +65,7 @@ class MainActivity : ComponentActivity() {
                             bssid = it.BSSID ?: "—",
                             frequency = it.frequency,
                             rssi = it.level,
-                            signal = ((it.level + 100) * 2).coerceIn(0, 100)
+                            signal = WifiManager.calculateSignalLevel(it.level, 101)
                         )
                     }
 
@@ -214,8 +214,8 @@ fun WifiScreen(activity: MainActivity) {
                     },
                     supportingContent = {
                         Text(
-                            "Уровень сигнала: ${network.rssi} dBm\n" +
-                            "${network.frequency} МГц • ${network.bssid}"
+                            "Сигнал: ${network.signal}% (${network.rssi} dBm)\n" +
+                                "${network.frequency} МГц • ${network.bssid}"
                         )
                     }
                 )
