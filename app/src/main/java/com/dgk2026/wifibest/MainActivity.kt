@@ -214,7 +214,7 @@ fun WifiScreen(activity: MainActivity) {
                     },
                     supportingContent = {
                         Text(
-                            "Сигнал: ${network.signal}% (${network.rssi} dBm)\n" +
+                            "Уровень сигнала: ${network.rssi} dBm\n" +
                             "${network.frequency} МГц • ${network.bssid}"
                         )
                     }
