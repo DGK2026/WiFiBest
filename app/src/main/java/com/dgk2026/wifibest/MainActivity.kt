@@ -40,7 +40,6 @@ class MainActivity : ComponentActivity() {
         private set
 
     var message by mutableStateOf("Нажмите кнопку для поиска сетей")
-        private set
 
     private val scanReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
